@@ -18,7 +18,7 @@ app.use(helmet())
 app.use(express.json())
 app.use(fileUpload({
     useTempFiles: true,
-    tempFileDir: './server/assets/tmp'
+    tempFileDir: './assets/tmp'
 }))
 
 // Connection to DB
@@ -27,9 +27,6 @@ connectDB(app, PORT, DB)
 // Routes
 const { users } = require('./routes')
 app.use('/api/users', users)
-
-const { moods } = require('./routes')
-app.use('/api/moods', moods)
 
 const { gifts} = require('./routes')
 app.use('/api/gifts', gifts)

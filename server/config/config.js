@@ -21,7 +21,7 @@ const CLOUD_SECRET   = process.env.CLOUD_SECRET
 
 module.exports = {
     PORT,
-    DB: DB,
+    DB: DB_TEST,
     AUTH0_AUDIENCE,
     AUTH0_ISSUER,
     APP_ORIGIN,
