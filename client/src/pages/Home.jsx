@@ -1,10 +1,13 @@
 import React from 'react'
-import { NavBar } from '../components'
+import { GifList, NavBar } from '../components'
 
 const Home = () => {
 
   return (
+    <>
     <NavBar/>
+    <GifList />
+    </>
   )
 }
 

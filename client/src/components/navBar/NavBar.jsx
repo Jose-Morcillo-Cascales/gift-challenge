@@ -1,10 +1,10 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import { useEffect } from 'react'
 import fetchCreateUser from '../../api/fetchCreateUser'
-import { LoginButton, LogoutButton, ModalButton } from './../index'
+import { LoginButton, LogoutButton} from './../index'
 import { useDispatch, useSelector } from 'react-redux'
 import { LOG_IN } from '../../redux/features/user_data/userSlice'
-
+import { Link } from 'react-router-dom'
 const NavBar = () => {
     const { user: userAuth, isAuthenticated } = useAuth0()
     const dispatch = useDispatch()
@@ -35,7 +35,7 @@ const NavBar = () => {
                     <button type="submit">Search</button>
                     {stateUser.isLogged ?
                         <div>
-                            <LogoutButton /> <ModalButton />
+                            <LogoutButton /> <Link to= "/form">Upload Image</Link>
                         </div>
                         : <LoginButton />}
 

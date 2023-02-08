@@ -1,5 +1,5 @@
 import React from 'react'
-import { Home } from '../pages'
+import { GifUpload, Home } from '../pages'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { GeneralProvider } from '../utils'
 const Router = () => {
@@ -8,6 +8,7 @@ const Router = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/form' element={<GifUpload/>} />
         </Routes>
       </BrowserRouter>
     </GeneralProvider>

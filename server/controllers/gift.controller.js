@@ -65,6 +65,7 @@ const giftsController = {
     postGift : async (req,res) =>{
         const {body , files} = req
        console.log(files)
+       console.log(body.moods)
        try {
 
             if (!mongoose.Types.ObjectId.isValid(body.ownership)) {
@@ -75,14 +76,14 @@ const giftsController = {
                 })
             }
 
-            if(files?.image){
-                
-                if(body.moods.indexOf(",") !== -1){
+            if(files?.file){
+                ("HOla")
+                if(body.moods?.indexOf(",") !== -1){
 
                     const moods = body.mood?.split()
 
-                    const { public_id, secure_url } = await uploadImage(files.image.tempFilePath)
-                    await fs.unlink(files.image.tempFilePath)
+                    const { public_id, secure_url } = await uploadImage(files.file.tempFilePath)
+                    await fs.unlink(files.file.tempFilePath)
                   
                     
                     const gift = await Gift.create(
@@ -115,8 +116,8 @@ const giftsController = {
                 }else {
                     
 
-                    const { public_id, secure_url } = await uploadImage(files.image.tempFilePath)
-                    await fs.unlink(files.image.tempFilePath)
+                    const { public_id, secure_url } = await uploadImage(files.file.tempFilePath)
+                    await fs.unlink(files.file.tempFilePath)
                     const gift = await Gift.create(
                         {
                             ...body,
@@ -141,7 +142,7 @@ const giftsController = {
                 }
             }else {
               
-                if(body.mood.indexOf(",") !== -1){
+                if(body.moods.indexOf(",") !== -1){
 
                     const moods = body.mood?.split()
 
