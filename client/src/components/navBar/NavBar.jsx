@@ -1,9 +1,14 @@
 import { useAuth0 } from '@auth0/auth0-react'
+import { useState } from 'react'
 import {LoginButton} from './../index'
 
 const NavBar = () => {
-    const {user:userAuth} = useAuth0()
-    console.log(userAuth)
+    const {user:userAuth , isAuthenticated} = useAuth0()
+    
+    const [userData , setUserData] = useState({
+        
+    })
+
     return (
         <nav >
             <div >

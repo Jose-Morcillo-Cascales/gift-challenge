@@ -1,13 +1,16 @@
 import React from 'react'
 import { Home } from '../pages'
-import {BrowserRouter,Routes,Route} from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { GeneralProvider } from '../utils'
 const Router = () => {
   return (
-    <BrowserRouter>
+    <GeneralProvider>
+      <BrowserRouter>
         <Routes>
-          <Route path='/home' element ={<Home/>}/>
+          <Route path='/' element={<Home />} />
         </Routes>
-    </BrowserRouter>
+      </BrowserRouter>
+    </GeneralProvider>
   )
 }
 

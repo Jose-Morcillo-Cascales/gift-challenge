@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const {  Gift ,User } = require("./../models")
 const fs = require('fs-extra')
 const {
-    uploadImage, destroyImage
+    uploadImage
 } = require("../utils/cloudinary")
 
 const giftsController = {
@@ -64,7 +64,7 @@ const giftsController = {
     },
     postGift : async (req,res) =>{
         const {body , files} = req
-       
+       console.log(files)
        try {
 
             if (!mongoose.Types.ObjectId.isValid(body.ownership)) {

@@ -63,6 +63,13 @@ const userController = {
         const {body} = req
 
        try {
+        const userExist = await User.findOne({email:body.email})
+        if (userExist){
+            res.status(400).send({
+                status:"Find",
+                user:userExist
+            })
+        }
         const user = await User.create({...body})
         res.status(201).send({
             status: "Created",
