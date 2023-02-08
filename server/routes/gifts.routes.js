@@ -7,7 +7,7 @@ const {
 
 } = require("./../controllers/gift.controller")
 
-const { checkJwt } = require("../../middlewares/checkJwt.middleware")
+const { checkJwt } = require("../middlewares/checkJwt.middleware")
 
 const router = express.Router()
     router
