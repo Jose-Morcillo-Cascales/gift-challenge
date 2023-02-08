@@ -1,12 +1,12 @@
 
+import  Router from './router/Router'
 import './App.css'
-import { LoginButton } from './components'
 import { GeneralProvider } from './utils'
 function App() {
 
   return (
     <GeneralProvider>
-      <LoginButton /> 
+      <Router />
     </GeneralProvider>
   )
 }
